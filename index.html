@@ -1,67 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meu Portfólio</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --primary-color: #2c3e50;
+      --accent-color: #3498db;
+      --text-color: #333;
+      --border-radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects, .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1 class="logo">SeuNome</h1>
-      <ul class="nav-links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+    <h1>Olá, eu sou [Seu Nome]</h1>
+    <p>Desenvolvedor Web | Frontend | Backend</p>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <section id="sobre" class="section">
+  <section id="sobre">
     <h2>Sobre Mim</h2>
-    <p>Sou um desenvolvedor web apaixonado por criar experiências modernas e funcionais na web.</p>
+    <p>Sou um desenvolvedor apaixonado por tecnologia, focado em criar soluções eficientes e modernas. Tenho experiência em desenvolvimento web com foco em HTML, CSS, JavaScript, e frameworks como React e Flask.</p>
   </section>
 
-  <section id="projetos" class="section">
+  <section id="projetos">
     <h2>Projetos</h2>
-    <div class="projetos-grid">
-      <div class="projeto">
+    <div class="projects">
+      <div class="card">
         <h3>Projeto 1</h3>
-        <p>Descrição breve do projeto.</p>
+        <p>Descrição curta do projeto. Pode incluir tecnologias usadas.</p>
+        <a href="#" class="btn">Ver no GitHub</a>
       </div>
-      <div class="projeto">
+      <div class="card">
         <h3>Projeto 2</h3>
-        <p>Descrição breve do projeto.</p>
+        <p>Outro projeto interessante com descrição resumida.</p>
+        <a href="#" class="btn">Ver no GitHub</a>
       </div>
     </div>
   </section>
 
-  <section id="habilidades" class="section">
+  <section id="habilidades">
     <h2>Habilidades</h2>
-    <ul class="habilidades-lista">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-    </ul>
+    <div class="skills">
+      <div class="card"><strong>HTML & CSS</strong></div>
+      <div class="card"><strong>JavaScript</strong></div>
+      <div class="card"><strong>React</strong></div>
+      <div class="card"><strong>Python / Flask</strong></div>
+      <div class="card"><strong>Git & GitHub</strong></div>
+    </div>
   </section>
 
-  <section id="contato" class="section">
+  <section id="contato">
     <h2>Contato</h2>
-    <form id="form-contato">
-      <input type="text" placeholder="Seu nome" required />
-      <input type="email" placeholder="Seu email" required />
-      <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-      <button type="submit">Enviar</button>
+    <form onsubmit="enviarFormulario(event)">
+      <label>Nome</label>
+      <input type="text" required />
+
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Mensagem</label>
+      <textarea rows="4" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 SeuNome. Todos os direitos reservados.</p>
+    <p>&copy; 2025 [Seu Nome]. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script>
+    function enviarFormulario(e) {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso!');
+    }
+
+    // Scroll suave
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
