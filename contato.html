@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>[Seu Nome]</h1>
+    <nav>
+      <a href="index.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Contato</h2>
+    <form onsubmit="enviarFormulario(event)">
+      <label>Nome</label>
+      <input type="text" required />
+
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Mensagem</label>
+      <textarea rows="4" required></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 [Seu Nome]</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
